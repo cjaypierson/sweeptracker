@@ -1,0 +1,2 @@
+class SweepstakesController < ApplicationController
+end

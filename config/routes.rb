@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+                     controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  resources :links
+
+  match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
+  match '/auth/failure', to: redirect('/'), via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

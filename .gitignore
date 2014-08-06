@@ -18,3 +18,4 @@
 #ignore database/secrets.yml
 /config/secrets.yml
 /config/database.yml
+/config/initializers/devise.rb
